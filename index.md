@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /index.html
 ---
 ## Welcome to the PlantUML Themes Gallery
 
@@ -37,7 +38,7 @@ Or jump directly to any of the pages dedicated to each theme.
 
 {% for theme in site.themes %}
 
-* Go to [{{ theme.display_name }}]({{ theme.url }}) page
+* Go to [{{ theme.display_name }}]({{ theme.url | relative_url }}) page
   {{ theme.excerpt }}
 
 {% endfor %}
@@ -48,7 +49,7 @@ Or jump directly to any of the pages dedicated to each diagram.
 
 {% for diagram in site.diagrams %}
 
-* Go to [{{ diagram.display_name }}]({{ diagram.url }}) page
+* Go to [{{ diagram.display_name }}]({{ diagram.url | relative_url }}) page
   {{ diagram.excerpt }}
 
 {% endfor %}

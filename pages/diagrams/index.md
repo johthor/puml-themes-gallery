@@ -17,9 +17,9 @@ permalink: /diagrams/index.html
 
 {{ diagram.excerpt }}
 
-Go to the page for the [{{ diagram.display_name }}]({{ diagram.url }})
+Go to the page for the [{{ diagram.display_name }}]({{ diagram.url | relative_url }})
 
-{% capture url %}{{ diagram.url }}{% endcapture %}
+{% capture url %}{{ diagram.url | relative_url }}{% endcapture %}
 {% capture caption %}{{ diagram.display_name }} shown in {{ site.default_theme.display_name }}{% endcapture %}
 
 {% include figure.html theme=site.default_theme diagram=diagram url=url caption=caption %}

@@ -1,6 +1,6 @@
 - name: Home
   kind: other
-  link: /
+  link: /index.html
 - name: Themes Overview
   kind: themes
   link: /themes/index.html

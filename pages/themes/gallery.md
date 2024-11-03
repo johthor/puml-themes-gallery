@@ -15,13 +15,13 @@ permalink: /themes/gallery.html
 
 ### {{ theme.display_name }}
 
-Go to the page for the [{{ theme.display_name }}]({{ theme.url }}).
+Go to the page for the [{{ theme.display_name }}]({{ theme.url | relative_url }}).
 
 <div class ="image-gallery">
 
 {% for diagram in site.diagrams %}
 
-{% capture url %}{{ theme.url }}#{{ diagram.name }}{% endcapture %}
+{% capture url %}{{ theme.url | relative_url }}#{{ diagram.name }}{% endcapture %}
 {% capture caption %}{{ diagram.display_name }}{% endcapture %}
 
 {% include figure.html theme=theme diagram=diagram url=url caption=caption %}
@@ -30,6 +30,6 @@ Go to the page for the [{{ theme.display_name }}]({{ theme.url }}).
 
 </div>
 
-Go to the page for the [{{ theme.display_name }}]({{ theme.url }}).
+Go to the page for the [{{ theme.display_name }}]({{ theme.url | relative_url }}).
 
 {% endfor %}

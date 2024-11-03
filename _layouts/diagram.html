@@ -23,7 +23,7 @@ This diagram was created from the following PlantUML code:
 
 <h4 id="{{ theme.name }}">{{ page.display_name }} shown in {{ theme.display_name }}</h4>
 
-{% capture url %}{{ theme.url }}#{{ page.name }}{% endcapture %}
+{% capture url %}{{ theme.url | relative_url }}#{{ page.name }}{% endcapture %}
 
 {% include figure.html theme=theme diagram=page url=url %}
 
