@@ -59,6 +59,12 @@ figure.image-box {
   &.with-caption img {
     margin-bottom: 0;
   }
+
+  &.dark {
+    img {
+      background-color: #777777;
+    }
+  }
 }
 
 /*! Image Gallery Style */

@@ -2,6 +2,7 @@
 name: black-knight
 display_name: black-knight Theme
 author: Brett Schwarz
+preferred_background: dark
 ---
 Colors representing the black knight.
 Looks best on a dark background.
