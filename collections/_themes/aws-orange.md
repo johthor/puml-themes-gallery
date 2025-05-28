@@ -2,6 +2,8 @@
 name: aws-orange
 display_name: aws-orange Theme
 author: Brett Schwarz
+mode_directive: '!$PUML_MODE = "dark"'
+outline_directive: '!$PUML_OUTLINE = "true"'
 ---
 Theme based off of the colors used by Amazon Web Services.
 

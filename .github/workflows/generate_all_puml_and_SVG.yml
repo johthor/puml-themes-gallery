@@ -1,4 +1,4 @@
-name: Generate puml + SVG
+name: Generate puml files and SVG
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -14,16 +14,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      # Runs a single command using the runners shell
-      - name: Run `generate_all_puml_for_all_theme.pl`
+      # Runs a single command using the runner's shell
+      - name: Run `generate_all_puml_files.pl`
         run: |
           mkdir -p gallery
-          perl -w script/generate_all_puml_for_all_theme.pl
+          perl -w script/generate_all_puml_files.pl diagrams themes
+          perl -w script/generate_all_puml_files.pl diagrams skins
+          perl -w script/generate_all_puml_files.pl stdlibs themes
+          perl -w script/generate_all_puml_files.pl stdlibs skins
       - name: Run `generate_all_SVG.sh`
         run: |
           chmod +x script/generate_all_SVG.sh
           ./script/generate_all_SVG.sh
-      # Runs  Commit the changes, if any
+      # Runs Commit the changes, if any
       - name: Commit the changes, if any
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

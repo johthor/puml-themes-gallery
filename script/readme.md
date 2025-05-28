@@ -26,7 +26,7 @@ B[update_lib.sh]
 VL[give_plantuml_version_latest.sh]
 AllTheme[give_all_plantuml_theme.sh]
 giveInput[give_all_input_file.pl]
-genPUML[generate_all_puml_for_all_theme.pl]
+genPUML[generate_all_puml_files.pl]
 genSVG[generate_all_SVG.sh]
 end
 

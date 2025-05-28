@@ -14,8 +14,13 @@ jobs:
         run: ./script/give_all_plantuml_theme.sh
       - name: Run `give_all_input_file.pl`
         run: perl -w script/give_all_input_file.pl
-      - name: Run `generate_all_puml_for_all_theme.pl`
-        run: perl -w script/generate_all_puml_for_all_theme.pl
+      - name: Run `generate_all_puml_files.pl`
+        run: |
+          mkdir -p gallery
+          perl -w script/generate_all_puml_files.pl diagrams themes
+          perl -w script/generate_all_puml_files.pl diagrams skins
+          perl -w script/generate_all_puml_files.pl stdlibs themes
+          perl -w script/generate_all_puml_files.pl stdlibs skins
       - name: Run `generate_all_SVG.sh`
         run: ./script/generate_all_SVG.sh
       - name: Commit the changes, if any
