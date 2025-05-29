@@ -27,7 +27,7 @@ layout: default
 
 {% capture url %}{{ variant.url }}{% endcapture %}
 {% capture main_caption %}Variant {{ variant.display_name }}{% endcapture %}
-{% include figure.liquid theme=variant diagram=site.default_diagram url=url caption=main_caption %}
+{% include figure.liquid style=variant diagram=site.default_diagram url=url caption=main_caption %}
 
 {% endfor %}
 {% endif %}

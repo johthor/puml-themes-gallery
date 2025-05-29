@@ -22,6 +22,6 @@ permalink: /stdlibs/index.html
 {% capture url %}{{ stdlib.url }}{% endcapture %}
 {% capture caption %}{{ stdlib.display_name }} shown in {{ site.default_theme.display_name }}{% endcapture %}
 
-{% include figure.liquid theme=site.default_theme diagram=stdlib url=url caption=caption %}
+{% include figure.liquid style=site.default_theme diagram=stdlib url=url caption=caption %}
 
 {% endfor %}

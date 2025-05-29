@@ -1,8 +1,9 @@
-{%capture imageSrc %}/gallery/lightmode/{% if page.kind=="stdlibs" %}stdlib-{% endif %}{{ include.diagram.name }}-{{ include.theme.name}}.svg{% endcapture %}
-<figure class="image-box{% if include.caption %} with-caption{% endif %} {{ include.theme.preferred_background }}">
+{%capture imageSrc %}/gallery/lightmode/{% if page.kind == "stdlibs" %}stdlib-{% endif %}{{ include.diagram.name }}-{{ include.style.name}}.svg{% endcapture %}
+
+<figure class="image-box{% if include.caption %} with-caption{% endif %} {{ include.style.preferred_background }}">
     <a href="{{ include.url | relative_url }}">
         <img src="{{ imageSrc | relative_url }}"
-                alt="{{ include.diagram.display_name }} in {{ include.theme.display_name}}"
+                alt="{{ include.diagram.display_name }} in {{ include.style.display_name}}"
                 loading="lazy" />
     </a>
 {% if include.caption %}

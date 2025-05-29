@@ -25,7 +25,7 @@ permalink: /diagrams/gallery.html
 {% capture url %}{{ diagram.url }}#{{ theme.name }}{% endcapture %}
 {% capture caption %}{{ theme.display_name }}{% endcapture %}
 
-{% include figure.liquid theme=theme diagram=diagram url=url caption=caption %}
+{% include figure.liquid style=theme diagram=diagram url=url caption=caption %}
 
 {% endunless %}
 {% endfor %}

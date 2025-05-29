@@ -31,7 +31,7 @@ permalink: /skins/table.html
 
 {% capture url %}{{ skin.url }}#{{ diagram.name }}{% endcapture %}
 
-{% include figure.liquid theme=skin diagram=diagram url=url %}
+{% include figure.liquid style=skin diagram=diagram url=url %}
 
             </td>
 

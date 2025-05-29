@@ -16,7 +16,7 @@ permalink: /themes/list.html
 
 ### {{ theme.display_name }}
 
-{% include linkToPage.liquid theme=theme relation="before" %}
+{% include linkToPage.liquid style=theme relation="before" %}
 
 {% for diagram in site.diagrams %}
 
@@ -25,11 +25,11 @@ permalink: /themes/list.html
 
 {% capture url %}{{ theme.url }}#{{ diagram.name }}{% endcapture %}
 
-{% include figure.liquid theme=theme diagram=diagram url=url %}
+{% include figure.liquid style=theme diagram=diagram url=url %}
 
 {% endfor %}
 
-{% include linkToPage.liquid theme=theme relation="after" %}
+{% include linkToPage.liquid style=theme relation="after" %}
 
 {% endunless %}
 {% endfor %}

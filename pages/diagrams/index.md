@@ -22,6 +22,6 @@ permalink: /diagrams/index.html
 {% capture url %}{{ diagram.url }}{% endcapture %}
 {% capture caption %}{{ diagram.display_name }} shown in {{ site.default_theme.display_name }}{% endcapture %}
 
-{% include figure.liquid theme=site.default_theme diagram=diagram url=url caption=caption %}
+{% include figure.liquid style=site.default_theme diagram=diagram url=url caption=caption %}
 
 {% endfor %}

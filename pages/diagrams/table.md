@@ -32,7 +32,7 @@ permalink: /diagrams/table.html
 
 {% capture url %}{{ diagram.url }}#{{ theme.name }}{% endcapture %}
 
-{% include figure.liquid theme=theme diagram=diagram url=url %}
+{% include figure.liquid style=theme diagram=diagram url=url %}
 
             </td>
 

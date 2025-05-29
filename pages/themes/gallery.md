@@ -16,7 +16,7 @@ permalink: /themes/gallery.html
 
 ### {{ theme.display_name }}
 
-{% include linkToPage.liquid theme=theme relation="before" %}
+{% include linkToPage.liquid style=theme relation="before" %}
 
 <div class ="image-gallery">
 
@@ -25,13 +25,13 @@ permalink: /themes/gallery.html
 {% capture url %}{{ theme.url }}#{{ diagram.name }}{% endcapture %}
 {% capture caption %}{{ diagram.display_name }}{% endcapture %}
 
-{% include figure.liquid theme=theme diagram=diagram url=url caption=caption %}
+{% include figure.liquid style=theme diagram=diagram url=url caption=caption %}
 
 {% endfor %}
 
 </div>
 
-{% include linkToPage.liquid theme=theme relation="after" %}
+{% include linkToPage.liquid style=theme relation="after" %}
 
 {% endunless %}
 {% endfor %}

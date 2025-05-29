@@ -25,7 +25,7 @@ permalink: /stdlibs/gallery.html
 {% capture url %}{{ stdlib.url }}#{{ theme.name }}{% endcapture %}
 {% capture caption %}{{ theme.display_name }}{% endcapture %}
 
-{% include figure.liquid theme=theme diagram=stdlib url=url caption=caption %}
+{% include figure.liquid style=theme diagram=stdlib url=url caption=caption %}
 
 {% endunless %}
 {% endfor %}

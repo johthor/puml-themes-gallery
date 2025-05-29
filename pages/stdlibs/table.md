@@ -32,7 +32,7 @@ permalink: /stdlibs/table.html
 
 {% capture url %}{{ stdlib.url }}#{{ theme.name }}{% endcapture %}
 
-{% include figure.liquid theme=theme diagram=stdlib url=url %}
+{% include figure.liquid style=theme diagram=stdlib url=url %}
 
             </td>
 

@@ -44,10 +44,10 @@ This diagram was created from the following PlantUML code:
 
 {% capture url %}{{ theme.url }}#{{ page.name }}{% endcapture %}
 {% capture main_caption %}Main {{ page.display_name }}{% endcapture %}
-{% include figure.liquid theme=theme diagram=page url=url caption=main_caption %}
+{% include figure.liquid style=theme diagram=page url=url caption=main_caption %}
 
 {% for example in page.examples %}
-{% include figure.liquid theme=theme diagram=example url=url caption=example.display_name %}
+{% include figure.liquid style=theme diagram=example url=url caption=example.display_name %}
 {% endfor %}
 {% endfor %}
 
@@ -58,9 +58,9 @@ This diagram was created from the following PlantUML code:
 
 {% capture url %}{{ skin.url }}#{{ page.name }}{% endcapture %}
 {% capture main_caption %}Main {{ page.display_name }}{% endcapture %}
-{% include figure.liquid theme=skin diagram=page url=url caption=main_caption %}
+{% include figure.liquid style=skin diagram=page url=url caption=main_caption %}
 
 {% for example in page.examples %}
-{% include figure.liquid theme=skin diagram=example url=url caption=example.display_name %}
+{% include figure.liquid style=skin diagram=example url=url caption=example.display_name %}
 {% endfor %}
 {% endfor %}

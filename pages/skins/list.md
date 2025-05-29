@@ -15,7 +15,7 @@ permalink: /skins/list.html
 
 ### {{ skin.display_name }}
 
-{% include linkToPage.liquid theme=skin relation="before" %}
+{% include linkToPage.liquid style=skin relation="before" %}
 
 {% for diagram in site.diagrams %}
 
@@ -24,10 +24,10 @@ permalink: /skins/list.html
 
 {% capture url %}{{ skin.url }}#{{ diagram.name }}{% endcapture %}
 
-{% include figure.liquid theme=skin diagram=diagram url=url %}
+{% include figure.liquid style=skin diagram=diagram url=url %}
 
 {% endfor %}
 
-{% include linkToPage.liquid theme=skin relation="after" %}
+{% include linkToPage.liquid style=skin relation="after" %}
 
 {% endfor %}

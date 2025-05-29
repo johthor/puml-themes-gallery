@@ -4,13 +4,13 @@
 
 {% if page.url == item.link %}
 
-    <a class="menu-item{% if page.kind== item.kind %} currentKind{% endif %}"
+    <a class="menu-item{% if page.kind == item.kind %} currentKind{% endif %}"
             aria-current="page"
             href="{{ item.link | relative_url }}">{{ item.name }}</a>
 
 {% else %}
 
-    <a class="menu-item{% if page.kind== item.kind %} currentKind{% endif %}"
+    <a class="menu-item{% if page.kind == item.kind %} currentKind{% endif %}"
             href="{{ item.link | relative_url }}">{{ item.name }}</a>
 
 {% endif %}

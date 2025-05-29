@@ -5,9 +5,9 @@
 
 {% capture url %}{{ diagram.url }}#{{ page.name }}{% endcapture %}
 {% capture main_caption %}Main {{ diagram.display_name }}{% endcapture %}
-{% include figure.liquid theme=page diagram=diagram url=url caption=main_caption %}
+{% include figure.liquid style=page diagram=diagram url=url caption=main_caption %}
 
 {% for example in diagram.examples %}
-{% include figure.liquid theme=page diagram=example url=url caption=example.display_name %}
+{% include figure.liquid style=page diagram=example url=url caption=example.display_name %}
 {% endfor %}
 {% endfor %}

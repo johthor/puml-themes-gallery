@@ -17,11 +17,11 @@ permalink: /skins/index.html
 
 {{ skin.excerpt }}
 
-{% include linkToPage.liquid theme=skin relation="before" %}
+{% include linkToPage.liquid style=skin relation="before" %}
 
 {% capture url %}{{ skin.url }}{% endcapture %}
 {% capture caption %}{{ site.default_diagram.display_name }} shown in {{ skin.display_name }}{% endcapture %}
 
-{% include figure.liquid theme=skin diagram=site.default_diagram url=url caption=caption %}
+{% include figure.liquid style=skin diagram=site.default_diagram url=url caption=caption %}
 
 {% endfor %}
