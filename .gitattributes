@@ -2,7 +2,7 @@
 collections/**/input/*.puml linguist-detectable
 
 # Generated Code
-gallery/themed-input/*.puml linguist-generated
+gallery/styled-input/*.puml linguist-generated
 
 # Language Highlight
 _layouts/*.html linguist-language=liquid

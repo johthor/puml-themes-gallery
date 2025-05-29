@@ -45,7 +45,7 @@ sub extract_yaml_frontmatter {
             $in_yaml = !$in_yaml;
             next;
         }
-        $yaml_text .= $_ if $in_yaml;
+        $yaml_text .= $_ if defined $in_yaml;
     }
     close $fh;
 
@@ -88,26 +88,26 @@ foreach my $f (@input_files) {
 
         write_file(
             $f,
-            'themed-input/' . $output_prefix . $input_name . '-' . $style_name . '.puml',
+            'styled-input/' . $output_prefix . $input_name . '-' . $style_name . '.puml',
             $style_directive . " $style_name\n");
 
         if (defined($outline_directive)) {
             write_file(
                 $f,
-                'themed-input/' . $output_prefix . $input_name . '-' . $style_name . '-outline.puml',
+                'styled-input/' . $output_prefix . $input_name . '-' . $style_name . '-outline.puml',
                 $outline_directive . "\n" . $style_directive . " $style_name\n");
         }
 
         if (defined($mode_directive)) {
             write_file(
                 $f,
-                'themed-input/' . $output_prefix . $input_name . '-' . $style_name . '-dark.puml',
+                'styled-input/' . $output_prefix . $input_name . '-' . $style_name . '-dark.puml',
                 $mode_directive . "\n" . $style_directive . " $style_name\n");
 
             if (defined($outline_directive)) {
                 write_file(
                     $f,
-                    'themed-input/' . $output_prefix . $input_name . '-' . $style_name . '-outline-dark.puml',
+                    'styled-input/' . $output_prefix . $input_name . '-' . $style_name . '-outline-dark.puml',
                     $outline_directive . "\n" . $mode_directive . "\n" . $style_directive . " $style_name\n");
             }
         }
