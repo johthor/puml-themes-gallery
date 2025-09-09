@@ -10,7 +10,8 @@ layout: default
 <h3>Theme Code</h3>
 
 <p>
-    See <a href="https://github.com/plantuml/plantuml/blob/master/src/main/resources/themes/puml-theme-{{ page.name }}.puml">PlantUML
+    See <a
+        href="https://github.com/plantuml/plantuml/blob/master/src/main/resources/themes/puml-theme-{{ page.name }}.puml">PlantUML
     themes {{
     page.display_name }}</a> for the theme's implementation details.
 </p>
@@ -32,4 +33,37 @@ layout: default
 {% endfor %}
 {% endif %}
 
+<h3>Available Diagrams</h3>
+<p>
+    The following diagrams are available in this theme.
+</p>
+
 {% include availableDiagrams.liquid %}
+
+{% if page.mode_directive %}
+<h3 id="diagrams-dark">Available Diagrams in Dark Mode</h3>
+<p>
+    The following diagrams are available in this theme with the <code>mode</code> set to <code>dark</code>.
+</p>
+
+{% include availableDiagrams.liquid selector="dark"%}
+{% endif %}
+
+{% if page.outline_directive %}
+<h3 id="diagrams-outline">Available Diagrams with Outlines</h3>
+<p>
+    The following diagrams are available in this theme with the <code>outline</code> option active.
+</p>
+
+{% include availableDiagrams.liquid selector="outline" %}
+{% endif %}
+
+{% if page.mode_directive and page.outline_directive %}
+<h3 id="diagrams-outline-dark">Available Diagrams with Outlines in Dark Mode</h3>
+<p>
+    The following diagrams are available in this theme with the <code>outline</code> option active and the
+    <code>mode</code> set to <code>dark</code>.
+</p>
+
+{% include availableDiagrams.liquid selector="outline-dark" %}
+{% endif %}

@@ -1,29 +1,33 @@
 {% if include.relation == "after" %}
-{% assign orientation = "above" %}
+    {% assign orientation = "above" %}
 {% else %}
-{% assign orientation = "below" %}
+    {% assign orientation = "below" %}
 {% endif %}
 
 {% if include.style %}
-{% assign linked_style = include.style %}
+    {% assign linked_style = include.style %}
 
-{% if linked_style.variants %}
+    {% if linked_style.variants %}
 This theme is available in multiple variants.
 Only the main variant is shown {{ orientation }}.
 Go to the [{{ linked_style.display_name }}]({{ linked_style.url | relative_url }}) page to see all the theme's variants
-and all available diagrams
-{% else %}
+and all available diagrams.
+    {% elsif linked_style.mode_directive or linked_style.outline_directive %}
+This theme supports additional configuration options.
+The theme is shown without any extra options {{ orientation }}.
+Go to the [{{ linked_style.display_name }}]({{ linked_style.url | relative_url }}) page to see all available diagrams with and without these options.
+    {% else %}
 Go to the [{{ linked_style.display_name }}]({{ linked_style.url | relative_url }}) page to see all available diagrams.
-{% endif %}
+    {% endif %}
 {% endif %}
 
 {% if include.diagram %}
-{% assign linked_diagram = include.diagram %}
+    {% assign linked_diagram = include.diagram %}
 
-{% if linked_diagram.examples %}
+    {% if linked_diagram.examples %}
 There are multiple examples available for this diagram type.
 Go to the [{{ linked_diagram.display_name }}]({{ linked_diagram.url | relative_url }}) page to see all examples in all themes.
-{% else %}
+    {% else %}
 Go to the [{{ linked_diagram.display_name }}]({{ linked_diagram.url | relative_url }}) page to see this diagram in all themes.
-{% endif %}
+    {% endif %}
 {% endif %}

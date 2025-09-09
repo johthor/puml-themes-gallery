@@ -1,13 +1,11 @@
-<h3>Available Diagrams</h3>
-
 {% for diagram in site.diagrams %}
 <h4 id="{{ diagram.name }}">{{ diagram.display_name }} shown in {{ page.display_name }}</h4>
 
 {% capture url %}{{ diagram.url }}#{{ page.name }}{% endcapture %}
 {% capture main_caption %}Main {{ diagram.display_name }}{% endcapture %}
-{% include figure.liquid style=page diagram=diagram url=url caption=main_caption %}
+{% include figure.liquid style=page diagram=diagram url=url caption=main_caption style_selector=include.selector %}
 
 {% for example in diagram.examples %}
-{% include figure.liquid style=page diagram=example url=url caption=example.display_name %}
+{% include figure.liquid style=page diagram=example url=url caption=example.display_name style_selector=include.selector %}
 {% endfor %}
 {% endfor %}

@@ -1,6 +1,19 @@
-{%capture imageSrc %}/gallery/lightmode/{% if page.kind == "stdlibs" %}stdlib-{% endif %}{{ include.diagram.name }}-{{ include.style.name}}.svg{% endcapture %}
+{% if include.style_selector %}
+    {%capture imageSrc %}/gallery/lightmode/{% if page.kind == "stdlibs" %}stdlib-{% endif %}{{ include.diagram.name }}-{{ include.style.name}}-{{ include.style_selector }}.svg{% endcapture %}
+{% else %}
+    {%capture imageSrc %}/gallery/lightmode/{% if page.kind == "stdlibs" %}stdlib-{% endif %}{{ include.diagram.name }}-{{ include.style.name}}.svg{% endcapture %}
+{% endif %}
 
-<figure class="image-box{% if include.caption %} with-caption{% endif %} {{ include.style.preferred_background }}">
+{% if include.style.preferred_background == "dark" %}
+    {% capture extra_classes %} dark-background{% endcapture %}
+{% elsif include.style_selector contains "dark" %}
+    {% capture extra_classes %} dark-background{% endcapture %}
+{% else %}
+    {% assign extra_classes = "" %}
+{% endif %}
+
+
+<figure class="image-box{% if include.caption %} with-caption{% endif %}{{ extra_classes }}">
     <a href="{{ include.url | relative_url }}">
         <img src="{{ imageSrc | relative_url }}"
                 alt="{{ include.diagram.display_name }} in {{ include.style.display_name}}"
